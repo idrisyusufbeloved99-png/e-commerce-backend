@@ -14,10 +14,12 @@ import wishlist from "./router/wishlist.js";
 import coupons from "./router/coupon.js";
 import subscribers from "./router/subscriber.js";
 
-const app = express();
-config();
 
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+config();
+const app = express();
+
+
+app.use(cors({ origin:'https://e-commerce-frontend-teal-nine.vercel.app', credentials: true }));
 app.use(cookieParser());
 app.use(express.json());
 
