@@ -14,12 +14,10 @@ import wishlist from "./router/wishlist.js";
 import coupons from "./router/coupon.js";
 import subscribers from "./router/subscriber.js";
 
-
-config();
 const app = express();
+config();
 
-
-app.use(cors({ origin:'https://e-commerce-frontend-teal-nine.vercel.app', credentials: true }));
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(cookieParser());
 app.use(express.json());
 
@@ -42,7 +40,7 @@ app.get("/", async (req, res, next) => {
 
 app.use(error);
 
-const port = process.env.PORT;
-app.listen(port, () => {
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
