@@ -9,7 +9,7 @@ const error = (err, req, res, next) => {
     console.log("============ End summary ===========");
 
     res.status(400).json({
-      error: "something happened on the server",
+      error: "something  happened on the server",
     });
   }
 
