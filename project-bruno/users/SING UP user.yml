@@ -1,0 +1,15 @@
+info:
+  name: SING UP user
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: http://localhost:5000/api/v1/users
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
