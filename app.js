@@ -17,7 +17,13 @@ import subscribers from "./router/subscriber.js";
 const app = express();
 config();
 
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.use(cors({
+  origin: [
+    process.env.CLIENT_URL,
+    "https://e-commerce-frontend-teal-nine.vercel.app",
+  ],
+  credentials: true,
+}));
 app.use(cookieParser());
 app.use(express.json());
 
