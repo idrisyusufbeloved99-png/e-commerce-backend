@@ -8,12 +8,11 @@ const error = (err, req, res, next) => {
     console.error(err.message);
     console.log("============ End summary ===========");
 
-    res.status(400).json({
-      error: "something  happened on the server",
-    });
+     res.status(500).json({
+    error: err.message || "Internal Server Error",
+  });
   }
 
-  next();
 };
 
 export default error;
